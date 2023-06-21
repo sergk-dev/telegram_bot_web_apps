@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ввод контактов</title>
+<link href="./jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="./jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<script src="./jquery-mobile/jquery-1.11.1.min.js"></script>
+<script src="./jquery-mobile/jquery.mobile-1.3.0.min.js"></script>
+	
+</head>
+
+<body>
+<div data-role="page" id="add_contact">
+  <div data-role="header">
+    <h1>Расскажи о себе</h1>
+  </div>
+  <div data-role="content"><!-- 
+  Replace form-handler.php with URL where to send the form-data when the form is submitted
+  Goto http://w3c.github.io/html-reference/input.text.html#input.text for more information on all attributes that can be used with text input field
+-->
+<form method="post" action="form-handler.php">
+  <div>
+    <label for="name">Имя: <span class="required">*</span> </label>
+    <input type="text" id="name" name="name" value="" placeholder="Твое имя" required="required" autofocus />
+  </div>  
+  <div>
+    <label for="phone">Номер телефона: <span class="required">*</span> </label>
+    <input type="text" id="phone" name="phone" value="" placeholder="+7(222)333-44-55" required="required" autofocus />
+  </div>	
+  <div>
+    <label for="addiction">Зависимость:</label>
+    <select id="addiction" name="addiction">
+      <option value="Алкоголь">Алкоголь</option>
+      <option value="Наркотики">Наркотики</option>
+      <option value="Созависимость">Созависимость</option>
+	  <option value="Мультизависимость">Мультизависимость</option>
+    </select>
+  </div>
+  
+  <div>
+    <label for="about">Напиши пару слов о себе:
+ 	</label>
+    <textarea id="about" name="about" placeholder="Напиши пару слов о себе." required 
+/* Chrome, Safari */
+-webkit-transform: rotateX(23deg) rotateY(12deg) rotateZ(30deg);
+/* Firefox */
+-moz-transform: rotateX(23deg) rotateY(12deg) rotateZ(30deg);
+/* Opera */
+-o-transform: rotateX(23deg) rotateY(12deg) rotateZ(30deg);
+/* Internet Explorer */
+-ms-transform: rotateX(23deg) rotateY(12deg) rotateZ(30deg);
+/* Standard Syntax */
+transform: rotateX(23deg) rotateY(12deg) rotateZ(30deg);
+></textarea>
+  </div>
+  <div>
+    <label for="sity">Город:</label>
+    <input type="text" id="sity" name="sity" value="" placeholder="Твой город" required="required" autofocus />
+  </div>
+  <div>
+    <h4>Временно скрыть мои данные:</h4>
+    <label for="hide_no">Нет</label>
+    <input type="radio" name="hide" id="hide_no" tabindex="2" value="no">
+    <label for="hide_yes">Да</label>
+    <input type="radio" name="hide" id="hide_yes" tabindex="3" value="yes">
+  </div>
+  
+  <div>
+    <h4>Удалить мои данные</h4>
+    <label for="delete_me">Да, удалить полностью.</label>
+    <input type="checkbox" name="delete_me" id="delete_me">
+  </div>
+  
+  <div>
+    <input type="submit" value="Готово" id="submit" />
+  </div>
+</form></div>
+  <div data-role="footer">  
+  </div>
+</div>
+</body>
+</html>
